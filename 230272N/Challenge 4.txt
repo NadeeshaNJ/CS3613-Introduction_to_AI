@@ -1,0 +1,2 @@
+PDDL assumes full observability, so the partially observable Wumpus world must be modeled with PPDDL.
+The agent reasons in terms of belief states, updating them from percepts like stench or breeze, and plans actions under uncertainty.

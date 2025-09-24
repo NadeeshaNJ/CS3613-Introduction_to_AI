@@ -1,0 +1,335 @@
+stderr: 
+Using TensorFlow backend.
+
+stdout: 
+Parsing pddl.....
+Parsing pddl..: [0.000s CPU, 0.002s wall-clock]
+Normalizing task.....
+Normalizing task..: [0.000s CPU, 0.000s wall-clock]
+Creating abstract structure graph.....
+Creating abstract structure graph..: [0.000s CPU, 0.001s wall-clock]
+Computing image from given graph...
+Using graph input file /tmp/tmpiome37v_/abstract-structure-graph.txt
+Using image output directory /tmp/tmpiome37v_
+Writing abstract structure graph grayscale 8bit image.....
+Grayscale color: 255
+Creating matrix for a graph with 89 nodes..
+Matrix size when created: 64800
+Matrix created, filling with values for edges..
+Performing bolding.
+Matrix size when 1s added: 64800
+Number of graph nodes: 90
+Shrink ratio: 3
+Shrinking matrix to size 30x30..
+Shrinked matrix size when created: 7200
+Writing grayscale image of size 128x128 ..
+Writing abstract structure graph grayscale 8bit image..: [0.270s CPU, 0.017s wall-clock]
+Done computing image! [0.290s CPU, 0.018s wall-clock]
+
+==== Computing an abstract structure graph from the lifted task description... ====
+
+
+==== Done computing an abstract structure graph. ====
+
+
+==== Selecting planner from learned model... ====
+
+Using json model file /workspace/delfi/dl_model/models/lifted/model.json
+Using h5 model file /workspace/delfi/dl_model/models/lifted/model.h5
+Loaded model from disk
+Chose 5652d59dafed-h2-simpless-dks-900masb50ksbmiasm
+
+==== Done selecting planner from learned model. ====
+
+
+==== Running the selected planner... ====
+
+Running planner, call string: ['/usr/bin/python', '/workspace/delfi/fast-downward.py', '--transform-task', 'preprocess', '--build', 'release64', '--search-memory-limit', '7600M', '--plan-file', 'plan', 'domain', 'problem', '--symmetries', 'sym=structural_symmetries(search_symmetries=dks)', '--search', 'astar(merge_and_shrink(shrink_strategy=shrink_bisimulation(greedy=false),merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[sf_miasm(shrink_strategy=shrink_bisimulation,max_states=50000),total_order(atomic_before_product=true,atomic_ts_order=reverse_level,product_ts_order=old_to_new)])),label_reduction=exact(before_shrinking=true,before_merging=false),max_states=50000,threshold_before_merge=1,max_time=900),symmetries=sym,pruning=stubborn_sets_simple(minimum_pruning_ratio=0.01),num_por_probes=1000)']
+INFO     Running translator.
+INFO     translator input: ['domain', 'problem']
+INFO     translator arguments: []
+INFO     translator time limit: None
+INFO     translator memory limit: None
+INFO     callstring: /usr/bin/python /workspace/delfi/builds/release64/bin/translate/translate.py domain problem
+Parsing...
+Parsing: [0.000s CPU, 0.001s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.000s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.002s wall-clock]
+Preparing model... [0.000s CPU, 0.000s wall-clock]
+Generated 16 rules.
+Computing model... [0.000s CPU, 0.001s wall-clock]
+52 relevant atoms
+41 auxiliary atoms
+93 final queue length
+107 total queue pushes
+Completing instantiation... [0.000s CPU, 0.001s wall-clock]
+Instantiating: [0.000s CPU, 0.004s wall-clock]
+Computing fact groups...
+Finding invariants...
+9 initial candidates
+Finding invariants: [0.000s CPU, 0.001s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.000s wall-clock]
+Instantiating groups... [0.000s CPU, 0.000s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+0 uncovered facts
+Choosing groups: [0.000s CPU, 0.000s wall-clock]
+Building translation key... [0.000s CPU, 0.000s wall-clock]
+Computing fact groups: [0.000s CPU, 0.002s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.000s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.000s CPU, 0.000s wall-clock]
+Translating task: [0.000s CPU, 0.001s wall-clock]
+0 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+2 propositions removed
+Detecting unreachable propositions: [0.000s CPU, 0.000s wall-clock]
+Reordering and filtering variables...
+2 of 2 variables necessary.
+0 of 2 mutex groups necessary.
+16 of 16 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [0.000s CPU, 0.000s wall-clock]
+Translator variables: 2
+Translator derived variables: 0
+Translator facts: 9
+Translator goal facts: 2
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 16
+Translator axioms: 0
+Translator task size: 69
+Translator peak memory: 27828 KB
+Writing output... [0.000s CPU, 0.000s wall-clock]
+Done! [0.010s CPU, 0.009s wall-clock]
+INFO     Run task transformation (preprocess).
+INFO     Absolute path: /workspace/delfi/builds/release64/bin/preprocess
+INFO     callstring: /workspace/delfi/builds/release64/bin/preprocess < output.sas
+Building causal graph...
+The causal graph is acyclic.
+2 variables of 2 necessary
+0 of 0 mutex groups necessary.
+16 of 16 operators necessary.
+0 of 0 axiom rules necessary.
+Initializing mutex computation...
+Mutex computation initialized with 9 fluents.
+iteration for mutex detection and operator pruning
+Initialize m_index fw
+Initialized mvalues forward: reached=4, notReached=45, spurious=32
+Initialize m_ops fw
+Computing mutexes...
+Mutex computation finished with reached=49, notReached=0, spurious=32
+0 operators are spurious because were not triggered
+H^2 mutexes added fw: 0, unreachable: 0
+0 of 16 operators detected as spurious
+iteration for mutex detection and operator pruning
+Initialize m_index bw
+Init values regression
+Initialized mvalues backward: reached=4, notReached=45, spurious=32
+Initialize m_ops bw
+Computing mutexes...
+Mutex computation finished with reached=49, notReached=0, spurious=32
+0 operators are spurious because were not triggered
+H^2 mutexes added bw: 0, unreachable: 0
+0 of 16 operators detected as spurious
+Total mutex and disambiguation time: 5.9e-05 iterations: 2
+0 of 0 mutex groups necessary.
+16 of 16 operators necessary.
+0 of 0 axiom rules necessary.
+Change id of operators: 16
+Change id of mutexes
+Change id of goals
+Change id of initial state
+Remove unreachable facts from variables: 2
+0 of 0 mutex groups necessary.
+16 of 16 operators necessary.
+0 of 0 axiom rules necessary.
+Updating causal graph and pruning unnecessary facts
+2 variables of 2 of 2 necessary
+The causal graph is acyclic.
+2 variables of 2 necessary
+0 of 0 mutex groups necessary.
+16 of 16 operators necessary.
+0 of 0 axiom rules necessary.
+Building domain transition graphs...
+solveable in poly time 0
+Building successor generator...
+Preprocessor variables: 2
+Preprocessor facts: 9
+Preprocessor derived variables: 0
+Preprocessor operators: 16
+Preprocessor mutex groups: 0
+Preprocessor task size: 69
+Writing output...
+done
+INFO     Running search (release64).
+INFO     search input: output.sas
+INFO     search arguments: ['--symmetries', 'sym=structural_symmetries(search_symmetries=dks)', '--search', 'astar(merge_and_shrink(shrink_strategy=shrink_bisimulation(greedy=false),merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[sf_miasm(shrink_strategy=shrink_bisimulation,max_states=50000),total_order(atomic_before_product=true,atomic_ts_order=reverse_level,product_ts_order=old_to_new)])),label_reduction=exact(before_shrinking=true,before_merging=false),max_states=50000,threshold_before_merge=1,max_time=900),symmetries=sym,pruning=stubborn_sets_simple(minimum_pruning_ratio=0.01),num_por_probes=1000)']
+INFO     search time limit: None
+INFO     search memory limit: 7600 MB
+INFO     search executable: /workspace/delfi/builds/release64/bin/downward
+INFO     callstring: /workspace/delfi/builds/release64/bin/downward --symmetries 'sym=structural_symmetries(search_symmetries=dks)' --search 'astar(merge_and_shrink(shrink_strategy=shrink_bisimulation(greedy=false),merge_strategy=merge_stateless(merge_selector=score_based_filtering(scoring_functions=[sf_miasm(shrink_strategy=shrink_bisimulation,max_states=50000),total_order(atomic_before_product=true,atomic_ts_order=reverse_level,product_ts_order=old_to_new)])),label_reduction=exact(before_shrinking=true,before_merging=false),max_states=50000,threshold_before_merge=1,max_time=900),symmetries=sym,pruning=stubborn_sets_simple(minimum_pruning_ratio=0.01),num_por_probes=1000)' --internal-plan-file plan < output.sas
+reading input... [t=3.8833e-05s]
+done reading input! [t=0.000136987s]
+packing state variables...done! [t=0.000145213s]
+Variables: 2
+FactPairs: 9
+Bytes per state: 4
+Building successor generator...done! [t=0.000199595s]
+peak memory difference for root successor generator creation: 0 KB
+time for root successor generation creation: 8.386e-06s
+done initializing global data [t=0.000225453s]
+Initializing merge-and-shrink heuristic...
+Merge strategy options:
+Type: stateless
+Merge selector options:
+Name: score based filtering
+Merge scoring function:
+Name: miasm
+Merge scoring function:
+Name: total order
+Atomic transition system order: reverse level
+Product transition system order: old to new
+Consider atomic before product transition systems
+Random seed: -1
+
+Options related to size limits and shrinking: 
+Transition system size limit: 50000
+Transition system size limit right before merge: 50000
+Threshold to trigger shrinking right before merge: 1
+
+Shrink strategy options: 
+Type: bisimulation
+Bisimulation type: exact
+At limit: return
+
+Label reduction options:
+Before merging: disabled
+Before shrinking: enabled
+Method: all transition systems with fixpoint computation
+System order: random
+
+Verbosity: verbose
+
+Building atomic transition systems... 
+done initializing transition system data 8.0401e-05
+done building transitions 9.3746e-05
+done creating transition systems 9.7484e-05
+done creating mas representations 0.000101491
+done creating distances 0.000103224
+Atomic transition system #0: computing init and goal distances using unit-cost algorithm
+Atomic transition system #1: computing init and goal distances using unit-cost algorithm
+done creating FTS 0.000112541
+Atomic transition system #0: not applying abstraction (same number of states)
+Atomic transition system #1: not applying abstraction (same number of states)
+t=0.000117781s (after computation of atomic transition systems)
+
+Next pair of indices: (0, 1)
+Atomic transition system #0: 4 states, 12 arcs 
+Atomic transition system #0: init h=0
+Atomic transition system #1: 5 states, 13 arcs 
+Atomic transition system #1: init h=2
+t=0.000144772s (after computation of next merge)
+Label reduction: 16 labels, 9 after reduction
+Label reduction: 9 labels, 5 after reduction
+t=0.000168757s (after label reduction)
+Atomic transition system #0: current size: 4 (shrink threshold: 1)
+Atomic transition system #0: not applying abstraction (same number of states)
+Atomic transition system #1: current size: 5 (shrink threshold: 1)
+Atomic transition system #1: not applying abstraction (same number of states)
+Merging atomic transition system #0 and atomic transition system #1
+Composite transition system with 2/2 vars: computing init and goal distances using unit-cost algorithm
+Composite transition system with 2/2 vars: 20 states, 48 arcs 
+Composite transition system with 2/2 vars: init h=6
+Difference of init h values: 4
+t=0.000201628s (after merging)
+Composite transition system with 2/2 vars: not applying abstraction (same number of states)
+Current peak memory increase of merge-and-shrink computation: 0 KB
+
+Iterations with merge tiebreaking: 0
+Total tiebreaking merge candidates: 0
+Final transition system size: 20
+Maximum intermediate abstraction size: 20
+Maximum intermediate number of transitions: 48
+Init h value improvements: [4]
+Course of label reduction: [16, 5]
+Course of miss qualified states shrinking: [0, 0]
+Average imperfect shrinking: 0
+Merge order: [(0, 1)]
+Linear merge order
+Relative pruning per iteration: [0]
+Average relative pruning: 0
+Number of attempts to merge for symmetries: 0
+Number of times non-perfect shrinking interfered merging for symmetries: 0
+Number of times pruning interfered merging for symmetries: 0
+Number of times merging for symmetries failed for any reason: 0
+Final peak memory increase of merge-and-shrink computation: 0 KB
+Done initializing merge-and-shrink heuristic [0.000263364s]
+
+Initializing symmetries (eager search)
+Initializing symmetries
+Using Bliss to find group generators
+Done initializing symmetries: 4.0587e-05s
+Number of generators: 1
+Number of identity generators (on states, not on operators): 0
+Order of generators: [2]
+Setting group in registry for DKS search
+Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 6
+[g=0, 1 evaluated, 0 expanded, t=0.00102812s, 5392 KB]
+f = 6 [1 evaluated, 0 expanded, t=0.00105281s, 5392 KB]
+Initial heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 6
+pruning method: stubborn sets simple
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 5
+[g=1, 2 evaluated, 1 expanded, t=0.00108984s, 5528 KB]
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 4
+[g=2, 3 evaluated, 2 expanded, t=0.00113575s, 5528 KB]
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 3
+[g=3, 4 evaluated, 3 expanded, t=0.00115875s, 5528 KB]
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 2
+[g=4, 5 evaluated, 4 expanded, t=0.00117752s, 5528 KB]
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 1
+[g=5, 6 evaluated, 5 expanded, t=0.00119413s, 5528 KB]
+New best heuristic value for merge_and_shrink(shrink_strategy = shrink_bisimulation(greedy = false), merge_strategy = merge_stateless(merge_selector = score_based_filtering(scoring_functions = list(sf_miasm(shrink_strategy = shrink_bisimulation, max_states = 50000), total_order(atomic_before_product = true, atomic_ts_order = reverse_level, product_ts_order = old_to_new)))), label_reduction = exact(before_shrinking = true, before_merging = false), max_states = 50000, threshold_before_merge = 1, max_time = 900): 0
+[g=6, 8 evaluated, 6 expanded, t=0.00121484s, 5528 KB]
+Solution found!
+Actual search time: 0.000155812s [t=0.00123927s]
+move robot1 rooma roomb (1)
+move robot1 roomb roomd (1)
+pickup robot1 treat roomd (1)
+move robot1 roomd roomb (1)
+move robot1 roomb rooma (1)
+drop robot1 treat rooma (1)
+Plan length: 6 step(s).
+Plan cost: 6
+Expanded 7 state(s).
+Reopened 0 state(s).
+Evaluated 8 state(s).
+Evaluations: 8
+Generated 16 state(s).
+Dead ends: 0 state(s).
+Expanded until last jump: 0 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 1 state(s).
+Generated until last jump: 0 state(s).
+Number of registered states: 8
+total successors before partial-order reduction: 16
+total successors after partial-order reduction: 16
+Search time: 0.000235061s
+Total time: 0.00124458s
+Solution found.
+Peak memory: 5528 KB
+Overall time: [0.120s CPU, 0.136s wall-clock]
+
+==== Done running the selected planner. ====
